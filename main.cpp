@@ -1,17 +1,28 @@
 #include "sort.h"
 #include <iostream>
 
-int main()
-{
-	vector<int> arr = {3, 6, 1, 7, 9, 2, 8, 4, 5};
+int main() {
+    vector<int> arr;
+    int n, temp;
 
-	for (int i = 0; i < arr.size(); i++)
-		cout << arr[i] << " ";
-	cout << endl;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
 
-	mergeSort(arr, 0, 8);
+    cout << "Enter the elements of the array:" << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> temp;
+        arr.push_back(temp);
+    }
 
-	for (int i = 0; i < arr.size(); i++)
-		cout << arr[i] << " ";
-	cout << endl;
+    cout << "Original array: ";
+    for (int i = 0; i < arr.size(); i++)
+        cout << arr[i] << " ";
+    cout << endl;
+
+    mergeSort(arr, 0, arr.size() - 1);
+
+    cout << "Sorted array: ";
+    for (int i = 0; i < arr.size(); i++)
+        cout << arr[i] << " ";
+    cout << endl;
 }
